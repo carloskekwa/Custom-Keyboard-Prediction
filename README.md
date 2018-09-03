@@ -1,0 +1,97 @@
+# Custom-Keyboard-Prediction
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+Custom-Keyboard-Prediction is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+pod 'PredictionForKeyboard'
+
+
+
+ Mainly you will use this Library in a Custom Keyboard Prediction. 
+ So to do that :
+
+    // in the Container app, in the AppDelegate.m
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //declare a specific entry for realm 
+    NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME]; 
+    RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
+    configuration.fileURL = realmPath;
+    NSLog(@"Realm Path: %@", realmPath);
+    [RLMRealmConfiguration setDefaultConfiguration:configuration];
+    
+    return YES;
+}
+
+And in the KeyboardviewController.m 
+/// check if full Access Granted
+
+
+ BOOL isAllowFullAccessed = [self isOpenAccessGranted];
+    
+    if (isAllowFullAccessed) {
+        NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME];
+        RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
+        configuration.fileURL = realmPath;
+        [RLMRealmConfiguration setDefaultConfiguration:configuration];
+        NSLog(@"Realm: %@", realmPath);
+    }
+
+
+- (BOOL)isOpenAccessGranted {
+    
+    NSOperatingSystemVersion operatingSystem = [[NSProcessInfo processInfo] operatingSystemVersion];
+    
+    if (operatingSystem.majorVersion >= 10) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        NSString *currentString = pasteboard.string;
+        
+        pasteboard.string = @"Please allow full access";
+        if (pasteboard.hasStrings) {
+            pasteboard.string = currentString ? currentString : @"";
+            return YES;
+        } else {
+            pasteboard.string = currentString ? currentString : @"";
+            return NO;
+        }
+    } else {
+        return [UIPasteboard generalPasteboard];
+    }
+}
+
+
+#import <PredictionForKeyboard/predictWord.h>
+
+// wherever u want to predict maybe in the insertText: method
+@implementation
+predictWord *predict; 
+-(void)viewDidLoad{
+    predictWord *predict = [[predictWord alloc] init];
+}
+
+ [predict initRealmWords:^(BOOL success) { First time initialization may take up to one minute.
+        // array of next word prediction 
+        [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
+            NSLog(@"%@:",suggestions); 
+        }];
+     // array of word List Prediction 
+          [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
+            NSLog(@"%@:",suggestions); 
+        }];
+    }];
+
+
+## Author
+
+carlos kekwa, carlos_kek@hotmail.com
+
+## License
+
+PredoctionForKeybpard is available under the MIT license. See the LICENSE file for more info.
