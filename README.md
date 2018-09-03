@@ -78,19 +78,24 @@ it, simply add the following line to your Podfile:
         -(void)viewDidLoad{
          predictWord *predict = [[predictWord alloc] init];
         }
+
 First time initialization may take up to one minute.
 
         [predict initRealmWords:^(BOOL success) { 
- Array of next word prediction 
+
+        }];
+
+ Array of next word prediction after initRealmWords Finish
+
         [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
         }];
+
 
 Array of word List Prediction 
 
           [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
-         }];
          }];
 
 
