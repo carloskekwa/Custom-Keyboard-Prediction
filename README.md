@@ -73,19 +73,18 @@ Import the Framework this way.
 
         #import <PredictionForKeyboard/predictWord.h>
 
- Wherever u want to predict maybe in the insertText: method
+ Wherever u want to predict. init
+First time initialization may take up to one minute.
         
         @implementation
         predictWord *predict; 
         -(void)viewDidLoad{
          predictWord *predict = [[predictWord alloc] init];
-        }
-
-First time initialization may take up to one minute.
-
         [predict initRealmWords:^(BOOL success) { 
 
         }];
+        }
+
 
  Array of next word prediction after initRealmWords Finish
 
@@ -96,12 +95,14 @@ First time initialization may take up to one minute.
 
 Array of word List Prediction 
 
-          [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
+          [predict getPrediction:@"how are you" completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
          }];
 
-
+No space on the right will give u word prediction and with a space will give the next word prediction.
 Just Give it any syntaxe and it will find the Prediction for it. The Array returned is mainly an array with many words ranked from the highest to the lowest.
+
+## Concrete Example
 
 ## Author
 
