@@ -36,6 +36,7 @@ it, simply add the following line to your Podfile:
         }
 
  And in the KeyboardviewController.m check if full Access Granted
+        
          BOOL isAllowFullAccessed = [self isOpenAccessGranted];
          if (isAllowFullAccessed) {
         NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME];
