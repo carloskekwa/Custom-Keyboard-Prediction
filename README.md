@@ -1,5 +1,10 @@
 # Custom-Keyboard-Prediction
 
+## Description 
+
+PredictionForKeybpard is the best iOS Library that make Next Word Prediction easy for Custom iOS Keyboard. 
+Since Apple does not support and does not provide any API for that, we decided to make a library that does that. Just Enjoy and buy me a coffee one day!
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -11,81 +16,77 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 Custom-Keyboard-Prediction is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-pod 'PredictionForKeyboard'
+         pod 'PredictionForKeyboard'
 
-
+## Implementation
 
  Mainly you will use this Library in a Custom Keyboard Prediction. 
  So to do that :
 
-    // in the Container app, in the AppDelegate.m
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //declare a specific entry for realm 
-    NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME]; 
-    RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
-    configuration.fileURL = realmPath;
-    NSLog(@"Realm Path: %@", realmPath);
-    [RLMRealmConfiguration setDefaultConfiguration:configuration];
+         // in the Container app, in the AppDelegate.m
+         - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+         //declare a specific entry for realm 
+          NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME]; 
+          RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
+          configuration.fileURL = realmPath;
+          NSLog(@"Realm Path: %@", realmPath);
+          [RLMRealmConfiguration setDefaultConfiguration:configuration];
     
-    return YES;
-}
+         return YES;
+        }
 
-And in the KeyboardviewController.m 
-/// check if full Access Granted
-
-
- BOOL isAllowFullAccessed = [self isOpenAccessGranted];
-    
-    if (isAllowFullAccessed) {
+       // And in the KeyboardviewController.m check if full Access Granted
+         BOOL isAllowFullAccessed = [self isOpenAccessGranted];
+         if (isAllowFullAccessed) {
         NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME];
         RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
         configuration.fileURL = realmPath;
         [RLMRealmConfiguration setDefaultConfiguration:configuration];
         NSLog(@"Realm: %@", realmPath);
-    }
+         }
 
 
-- (BOOL)isOpenAccessGranted {
+        - (BOOL)isOpenAccessGranted {
     
-    NSOperatingSystemVersion operatingSystem = [[NSProcessInfo processInfo] operatingSystemVersion];
+         NSOperatingSystemVersion operatingSystem = [[NSProcessInfo processInfo] operatingSystemVersion];
     
-    if (operatingSystem.majorVersion >= 10) {
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        NSString *currentString = pasteboard.string;
+         if (operatingSystem.majorVersion >= 10) {
+         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+         NSString *currentString = pasteboard.string;
         
-        pasteboard.string = @"Please allow full access";
-        if (pasteboard.hasStrings) {
+         pasteboard.string = @"Please allow full access";
+         if (pasteboard.hasStrings) {
             pasteboard.string = currentString ? currentString : @"";
             return YES;
-        } else {
+         } else {
             pasteboard.string = currentString ? currentString : @"";
             return NO;
+         }
+         } else {
+         return [UIPasteboard generalPasteboard];
+         }
+         }
+
+
+         #import <PredictionForKeyboard/predictWord.h>
+
+        // wherever u want to predict maybe in the insertText: method
+        @implementation
+        predictWord *predict; 
+        -(void)viewDidLoad{
+         predictWord *predict = [[predictWord alloc] init];
         }
-    } else {
-        return [UIPasteboard generalPasteboard];
-    }
-}
 
-
-#import <PredictionForKeyboard/predictWord.h>
-
-// wherever u want to predict maybe in the insertText: method
-@implementation
-predictWord *predict; 
--(void)viewDidLoad{
-    predictWord *predict = [[predictWord alloc] init];
-}
-
- [predict initRealmWords:^(BOOL success) { First time initialization may take up to one minute.
+        [predict initRealmWords:^(BOOL success) { First time initialization may take up to one minute.
         // array of next word prediction 
         [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
         }];
-     // array of word List Prediction 
+         // array of word List Prediction 
           [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
-        }];
-    }];
+         }];
+         }];
 
 
 ## Author
