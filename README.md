@@ -72,6 +72,7 @@ it, simply add the following line to your Podfile:
          #import <PredictionForKeyboard/predictWord.h>
 
  Wherever u want to predict maybe in the insertText: method
+       
         @implementation
         predictWord *predict; 
         -(void)viewDidLoad{
