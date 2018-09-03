@@ -22,8 +22,8 @@ it, simply add the following line to your Podfile:
 
  Mainly you will use this Library in a Custom Keyboard Prediction. 
  So to do that :
-
-         // in the Container app, in the AppDelegate.m
+n the Container app, in the AppDelegate.m
+        
          - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
          //declare a specific entry for realm 
           NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME]; 
@@ -98,6 +98,8 @@ Array of word List Prediction
             NSLog(@"%@:",suggestions); 
          }];
 
+
+Just Give it any syntaxe and it will find the Prediction for it. The Array returned is mainly an array with many words ranked from the highest to the lowest.
 
 ## Author
 
