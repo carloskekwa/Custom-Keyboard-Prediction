@@ -17,6 +17,7 @@ Custom-Keyboard-Prediction is available through [CocoaPods](https://cocoapods.or
 it, simply add the following line to your Podfile:
 
          pod 'PredictionForKeyboard'
+         pod install
 
 ## Implementation
 
@@ -68,8 +69,9 @@ n the Container app, in the AppDelegate.m
          }
          }
 
+Import the Framework this way.
 
-         #import <PredictionForKeyboard/predictWord.h>
+        #import <PredictionForKeyboard/predictWord.h>
 
  Wherever u want to predict maybe in the insertText: method
         
