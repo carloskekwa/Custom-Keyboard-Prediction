@@ -45,7 +45,7 @@ it, simply add the following line to your Podfile:
         NSLog(@"Realm: %@", realmPath);
          }
 
-
+// you can ignore what is above if you are not using this library for a Custom Keyboard
         - (BOOL)isOpenAccessGranted {
     
          NSOperatingSystemVersion operatingSystem = [[NSProcessInfo processInfo] operatingSystemVersion];
