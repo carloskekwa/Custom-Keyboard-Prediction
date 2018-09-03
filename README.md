@@ -35,7 +35,7 @@ it, simply add the following line to your Podfile:
          return YES;
         }
 
-       // And in the KeyboardviewController.m check if full Access Granted
+ And in the KeyboardviewController.m check if full Access Granted
          BOOL isAllowFullAccessed = [self isOpenAccessGranted];
          if (isAllowFullAccessed) {
         NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME];
@@ -45,7 +45,7 @@ it, simply add the following line to your Podfile:
         NSLog(@"Realm: %@", realmPath);
          }
 
-// you can ignore what is above if you are not using this library for a Custom Keyboard
+ You can ignore what is above if you are not using this library for a Custom Keyboard
         - (BOOL)isOpenAccessGranted {
     
          NSOperatingSystemVersion operatingSystem = [[NSProcessInfo processInfo] operatingSystemVersion];
@@ -70,7 +70,7 @@ it, simply add the following line to your Podfile:
 
          #import <PredictionForKeyboard/predictWord.h>
 
-        // wherever u want to predict maybe in the insertText: method
+ Wherever u want to predict maybe in the insertText: method
         @implementation
         predictWord *predict; 
         -(void)viewDidLoad{
@@ -78,11 +78,11 @@ it, simply add the following line to your Podfile:
         }
 
         [predict initRealmWords:^(BOOL success) { First time initialization may take up to one minute.
-        // array of next word prediction 
+ Array of next word prediction 
         [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
         }];
-         // array of word List Prediction 
+Array of word List Prediction 
           [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
          }];
