@@ -38,7 +38,7 @@ n the Container app, in the AppDelegate.m
  And in the KeyboardviewController.m check if full Access Granted
         
          BOOL isAllowFullAccessed = [self isOpenAccessGranted];
-         if (isAllowFullAccessed) {
+        if (isAllowFullAccessed) {
         NSURL *realmPath = [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID] URLByAppendingPathComponent:REALM_DB_NAME];
         RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
         configuration.fileURL = realmPath;
@@ -46,9 +46,9 @@ n the Container app, in the AppDelegate.m
         NSLog(@"Realm: %@", realmPath);
          }
 
- You can ignore what is above if you are not using this library for a Custom Keyboard
+ You can ignore what is above if you are not using this library in a Custom Keyboard Extension
+
         - (BOOL)isOpenAccessGranted {
-    
          NSOperatingSystemVersion operatingSystem = [[NSProcessInfo processInfo] operatingSystemVersion];
     
          if (operatingSystem.majorVersion >= 10) {
