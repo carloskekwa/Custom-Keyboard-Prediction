@@ -72,19 +72,22 @@ it, simply add the following line to your Podfile:
          #import <PredictionForKeyboard/predictWord.h>
 
  Wherever u want to predict maybe in the insertText: method
-       
+        
         @implementation
         predictWord *predict; 
         -(void)viewDidLoad{
          predictWord *predict = [[predictWord alloc] init];
         }
+First time initialization may take up to one minute.
 
-        [predict initRealmWords:^(BOOL success) { First time initialization may take up to one minute.
+        [predict initRealmWords:^(BOOL success) { 
  Array of next word prediction 
         [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
         }];
+
 Array of word List Prediction 
+
           [predict getPrediction:@"how are you " completion:^(NSArray *suggestions, UIColor *textColor) {
             NSLog(@"%@:",suggestions); 
          }];
