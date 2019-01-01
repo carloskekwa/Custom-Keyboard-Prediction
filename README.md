@@ -9,8 +9,6 @@ Since Apple does not support and does not provide any API for that, we decided t
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 Custom-Keyboard-Prediction is available through [CocoaPods](https://cocoapods.org). To install
@@ -21,8 +19,10 @@ it, simply add the following line to your Podfile:
          
 ##  App Groups
 
-[Enable App Groups](https://medium.com/ios-os-x-development/shared-user-defaults-in-ios-3f15cd2c9409): group.com.code.testingpredictionframework
+[Enable App Groups](https://medium.com/ios-os-x-development/shared-user-defaults-in-ios-3f15cd2c9409).
+Let the groups name be 'group.com.code.testingpredictionframework'. Otherwise the library will crash.
 
+![alt text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202018-12-30%20at%208.33.41%20PM.png?alt=media&token=fba9f7fe-92c4-4a1b-b6c6-fb9d8d447051)
 
 
 ## Implementation
