@@ -1,4 +1,4 @@
-# Custom-Keyboard-Prediction
+# Custom-Keyboard-Prediction for Keyboard extension in iOS
 
 ## Description 
 
