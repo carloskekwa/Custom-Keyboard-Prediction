@@ -1,4 +1,4 @@
-# Custom-Keyboard-Prediction for Keyboard extension in iOS
+# Custom-Keyboard-Prediction for Keyboard extension in iOS (Work on Real Device Only)
 
 ## Description 
 
@@ -24,9 +24,22 @@ Let the groups name be 'group.com.code.testingpredictionframework'. Otherwise th
 
 ![alt text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202018-12-30%20at%208.33.41%20PM.png?alt=media&token=fba9f7fe-92c4-4a1b-b6c6-fb9d8d447051)
 
+## Copy Bundle Resources
+
+Add Bundle Resource (+)
+
+![alt text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.29.45%20PM.png?alt=media&token=a0f53711-25b3-4507-bfb4-dfa0b5881d22)
+
+![alt text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.29.55%20PM.png?alt=media&token=5b79760f-681e-4085-94a3-b559881a789b)
+
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.30.13%20PM.png?alt=media&token=9c54af00-e45d-4191-bdc4-38440d7ad911)
+
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.30.24%20PM.png?alt=media&token=93ea1e6b-9bd7-49b7-97e5-f02846be28ae)
+
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.53.37%20PM.png?alt=media&token=fbac48b2-3afc-4976-82ea-0b4a0c43c132)
 
 ## Implementation
-
+ 
  Mainly you will use this Library in a Custom Keyboard Prediction. 
  So to do that :
 
