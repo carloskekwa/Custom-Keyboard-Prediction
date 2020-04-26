@@ -1,5 +1,9 @@
 # Custom-Keyboard-Prediction for Keyboard extension in iOS (Work on Real Device Only)
 
+
+Work on Real Device Only !!!!!!!!!!!!!
+
+
 ## Description 
 
 PredictionForKeybpard is the best iOS Library that make Next Word Prediction easy for Custom iOS Keyboard. 
