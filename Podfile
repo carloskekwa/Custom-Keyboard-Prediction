@@ -6,7 +6,7 @@ target 'testPrediction' do
   use_frameworks!
 
   # Pods for testPrediction
-
+pod 'PredictionForKeyboard'
 
 
   target 'testPredictionTests' do

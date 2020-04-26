@@ -1,0 +1,16 @@
+PODS:
+  - PredictionForKeyboard (0.0.8)
+
+DEPENDENCIES:
+  - PredictionForKeyboard
+
+SPEC REPOS:
+  trunk:
+    - PredictionForKeyboard
+
+SPEC CHECKSUMS:
+  PredictionForKeyboard: f8109280cdac360a647b61eee27246af24fa13c7
+
+PODFILE CHECKSUM: dc40d7c9060a8ad92e342544fb33c0df411125e5
+
+COCOAPODS: 1.9.1
