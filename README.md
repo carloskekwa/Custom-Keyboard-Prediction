@@ -1,5 +1,9 @@
 # Custom-Keyboard-Prediction for Keyboard extension in iOS (Work on Real Device Only)
 
+
+**Work on Real Device Only !!!!!!!!!!!!!**
+
+
 ## Description 
 
 PredictionForKeybpard is the best iOS Library that make Next Word Prediction easy for Custom iOS Keyboard. 
@@ -28,9 +32,15 @@ Let the groups name be 'group.com.code.testingpredictionframework'. Otherwise th
 
 Add Bundle Resource (+)
 
-![alt text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.29.45%20PM.png?alt=media&token=a0f53711-25b3-4507-bfb4-dfa0b5881d22)
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.29.45%20PM.png?alt=media&token=a0f53711-25b3-4507-bfb4-dfa0b5881d22)
 
-![alt text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.29.55%20PM.png?alt=media&token=5b79760f-681e-4085-94a3-b559881a789b)
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.29.51%20PM.png?alt=media&token=7dcabed5-d632-4063-b5d2-c90ee49be138)
+
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.29.55%20PM.png?alt=media&token=5b79760f-681e-4085-94a3-b559881a789b)
+
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/1.png?alt=media&token=555e37d8-2a62-46cd-8335-10bbf33dcf7a)
+
+![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/2.png?alt=media&token=e8d1da24-6af7-414b-8833-1be55cda83ea)
 
 ![alt_text](https://firebasestorage.googleapis.com/v0/b/full-keyboard.appspot.com/o/Screen%20Shot%202020-04-25%20at%2011.30.13%20PM.png?alt=media&token=9c54af00-e45d-4191-bdc4-38440d7ad911)
 
