@@ -1,0 +1,37 @@
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Xcode
+build/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+xcuserdata/
+*.xcworkspace
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~
+.idea/
+
+# Build outputs
+*.app/
+*.ipa
+*.dSYM.zip
+*.dSYM/
+
+# Temporary files
+*.tmp
+*~.nib
