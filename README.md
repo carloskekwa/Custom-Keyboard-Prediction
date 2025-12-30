@@ -31,10 +31,44 @@
 
 ### CocoaPods
 
-Add the following line to your `Podfile`:
+Create or update your `Podfile` with the following:
 
 ```ruby
-pod 'PredictionKeyboard', '~> 1.0.5'
+platform :ios, '15.0'
+
+target 'YourAppName' do
+  use_frameworks!
+
+  pod 'PredictionKeyboard', '~> 1.0.34'
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['CODE_SIGN_IDENTITY'] = ''
+      config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+      config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+    end
+  end
+
+  # Disable sandbox for script phases (required for Xcode 16+)
+  installer.pods_project.targets.each do |target|
+    target.build_phases.each do |phase|
+      if phase.is_a?(Xcodeproj::Project::Object::PBXShellScriptBuildPhase)
+        phase.always_out_of_date = "1"
+      end
+    end
+  end
+
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING'] = 'NO'
+      end
+    end
+  end
+end
 ```
 
 Then run:
