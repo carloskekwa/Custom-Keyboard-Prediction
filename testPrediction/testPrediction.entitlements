@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.code.testingpredictionframework</string>
+		<string>group.code.group.k2025</string>
 	</array>
 </dict>
 </plist>

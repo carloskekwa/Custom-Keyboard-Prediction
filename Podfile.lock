@@ -1,16 +1,27 @@
 PODS:
-  - PredictionForKeyboard (0.0.8)
+  - PredictionKeyboard (1.0.34):
+    - Realm (~> 10.0)
+    - RealmSwift (~> 10.0)
+  - Realm (10.54.6):
+    - Realm/Headers (= 10.54.6)
+  - Realm/Headers (10.54.6)
+  - RealmSwift (10.54.6):
+    - Realm (= 10.54.6)
 
 DEPENDENCIES:
-  - PredictionForKeyboard
+  - PredictionKeyboard (= 1.0.34)
 
 SPEC REPOS:
-  trunk:
-    - PredictionForKeyboard
+  https://github.com/CocoaPods/Specs.git:
+    - PredictionKeyboard
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
-  PredictionForKeyboard: f8109280cdac360a647b61eee27246af24fa13c7
+  PredictionKeyboard: 0b0f45196df14d85a1456e8b4b199fca3a7e5f31
+  Realm: b1b3bc68162fa242132eb7eefbf91d7c40f36a85
+  RealmSwift: 456cfd82a4f23dff8e3456980999331ab69bbf3e
 
-PODFILE CHECKSUM: dc40d7c9060a8ad92e342544fb33c0df411125e5
+PODFILE CHECKSUM: 1ea2ee4bd1f7c6ea3e81ec1c268347bd4e2856e8
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.16.2
