@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     // Initialize with app group (for keyboard extension)
-    self.predictionManager = [[PredictionKeyboardManager alloc] initWithAppGroup:@"group.code.group.k2025"];
+    self.predictionManager = [[PredictionKeyboardManager alloc] initWithAppGroup:@"group.com.yourcompany.yourapp"];
     
     // Or without app group (single app)
     // self.predictionManager = [[PredictionKeyboardManager alloc] init];
