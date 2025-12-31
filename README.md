@@ -1,12 +1,12 @@
 # Custom-Keyboard-Prediction
 
-Example iOS app demonstrating the **PredictionKeyboard** framework - an intelligent next-word prediction system for custom keyboards.
+Example iOS app demonstrating the **PredictionKeyboard** framework - an intelligent next-word prediction system for custom keyboards with emoji suggestions.
 
 ## Overview
 
 This repository contains a complete working example with:
 - **testPrediction** - Main app that downloads and initializes the prediction database
-- **testKeyboard** - Keyboard extension that uses predictions
+- **testKeyboard** - Keyboard extension that uses predictions and emoji suggestions
 
 ## Quick Start
 
@@ -332,12 +332,12 @@ platform :ios, '15.0'
 
 target 'testPrediction' do
   use_frameworks!
-  pod 'PredictionKeyboard', '~> 1.0.35'
+  pod 'PredictionKeyboard', '~> 1.0.36'
 end
 
 target 'testKeyboard' do
   use_frameworks!
-  pod 'PredictionKeyboard', '~> 1.0.35'
+  pod 'PredictionKeyboard', '~> 1.0.36'
 end
 
 post_install do |installer|
@@ -393,6 +393,28 @@ Users must enable "Allow Full Access" in **Settings > General > Keyboard > Keybo
 - Keyboard extensions have limited network access and memory
 - The keyboard extension only initializes and uses the pre-downloaded database
 
+## Emoji Suggestions
+
+Version 1.0.36+ includes automatic emoji suggestions. When typing words that have associated emojis, the emoji appears in the third suggestion slot:
+
+| You Type | Suggestions |
+|----------|-------------|
+| cool | `["cool", "cooler", "😎"]` |
+| love | `["love", "lovely", "💘"]` |
+| fire | `["fire", "fired", "🔥"]` |
+| happy | `["happy", "happily", "☺"]` |
+| cat | `["cat", "catch", "🐱"]` |
+| good | `["good", "goodness", "👍"]` |
+| heart | `["heart", "hearts", "❤️"]` |
+
+**225+ words supported** including:
+- Emotions: happy, sad, angry, love, cool, etc.
+- Animals: cat, dog, bird, fish, etc.
+- Objects: car, phone, coffee, pizza, etc.
+- Actions: run, swim, dance, etc.
+
+If no emoji matches the typed word, the third slot shows a second word prediction instead.
+
 ## API Reference
 
 ### PredictionKeyboardManager
@@ -411,7 +433,7 @@ Users must enable "Allow Full Access" in **Settings > General > Keyboard > Keybo
 // Initialize database
 - (void)initializePredictionDatabase:(void(^)(BOOL success, NSError *error))completion;
 
-// Get predictions
+// Get predictions (includes emoji in slot 3 when available)
 - (void)getPrediction:(NSString *)syntax
            completion:(void(^)(NSArray<NSString *> *suggestions, UIColor *textColor))completion;
 ```
