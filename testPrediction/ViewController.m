@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     // Initialize with app group (for keyboard extension)
-    self.predictionManager = [[PredictionKeyboardManager alloc] initWithAppGroup:@"group.com.yourcompany.yourapp"];
+    self.predictionManager = [[PredictionKeyboardManager alloc] initWithAppGroup:@"group.code.group.k2025"];
     
     // Or without app group (single app)
     // self.predictionManager = [[PredictionKeyboardManager alloc] init];
@@ -61,7 +61,7 @@
 
 - (void)testPredictions {
     // Test next-word prediction
-    [self.predictionManager getPrediction:@"how are " completion:^(NSArray<NSString *> *suggestions, UIColor *textColor) {
+    [self.predictionManager getPrediction:@"kifak khaye " completion:^(NSArray<NSString *> *suggestions, UIColor *textColor) {
         NSLog(@"Next-word predictions: %@", suggestions);
         // suggestions = @[@"you", @"they", @"we"]
     }];

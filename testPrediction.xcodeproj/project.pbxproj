@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,9 +16,11 @@
 		0775F6A224524E3B00C1A5A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0775F6A124524E3B00C1A5A5 /* main.m */; };
 		0775F6AC24524E3B00C1A5A5 /* testPredictionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0775F6AB24524E3B00C1A5A5 /* testPredictionTests.m */; };
 		0775F6B724524E3B00C1A5A5 /* testPredictionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0775F6B624524E3B00C1A5A5 /* testPredictionUITests.m */; };
-		2051D4E21CEDC18E67A157AA /* Pods_testPredictionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD09DB1354F429CDE1ED90B /* Pods_testPredictionTests.framework */; };
-		CD8A1F82CEBB703796F3C21D /* Pods_testPrediction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8FF45B6A2378EEBE57BBA74 /* Pods_testPrediction.framework */; };
-		E570A84A4BC864C3F72305F9 /* Pods_testPrediction_testPredictionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D3BE248FFFC48A3B0D9E77 /* Pods_testPrediction_testPredictionUITests.framework */; };
+		873E6ECF3DCDA13F53ECCDAB /* Pods_testKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F1B70658F09AEB928977FA /* Pods_testKeyboard.framework */; };
+		8D2D9A222F04901100780E0A /* testKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8D2D9A1A2F04901100780E0A /* testKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C1D7D5717B348E9DCBB3EEC /* Pods_testPredictionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D051D38D246B057A4AC488 /* Pods_testPredictionTests.framework */; };
+		AD3A250C9E988DB09B7978BA /* Pods_testPrediction_testPredictionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC323FDCBA135786DB70CBF /* Pods_testPrediction_testPredictionUITests.framework */; };
+		B96E52DE7D16AB1AC6D97158 /* Pods_testPrediction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0361B884C1EAC0BD456561 /* Pods_testPrediction.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,13 @@
 			remoteGlobalIDString = 0775F68B24524E3A00C1A5A5;
 			remoteInfo = testPrediction;
 		};
+		8D2D9A202F04901100780E0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0775F68424524E3A00C1A5A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D2D9A192F04901100780E0A;
+			remoteInfo = testKeyboard;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +56,17 @@
 			files = (
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D2D9A232F04901100780E0A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8D2D9A222F04901100780E0A /* testKeyboard.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -71,24 +91,42 @@
 		0775F6B624524E3B00C1A5A5 /* testPredictionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testPredictionUITests.m; sourceTree = "<group>"; };
 		0775F6B824524E3B00C1A5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0775F6C424524EAB00C1A5A5 /* testPrediction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = testPrediction.entitlements; sourceTree = "<group>"; };
-		11E840B774E593FD06975AC2 /* Pods-testPrediction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction.debug.xcconfig"; path = "Target Support Files/Pods-testPrediction/Pods-testPrediction.debug.xcconfig"; sourceTree = "<group>"; };
-		14467A8728869C4F59D5768F /* Pods-testPrediction-testPredictionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction-testPredictionUITests.release.xcconfig"; path = "Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		32D6EFF58FCECBB4ABFBD2BF /* Pods-testPredictionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPredictionTests.release.xcconfig"; path = "Target Support Files/Pods-testPredictionTests/Pods-testPredictionTests.release.xcconfig"; sourceTree = "<group>"; };
-		75D3BE248FFFC48A3B0D9E77 /* Pods_testPrediction_testPredictionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPrediction_testPredictionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CD09DB1354F429CDE1ED90B /* Pods_testPredictionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPredictionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2914DC0E6A71A556B030FB23 /* Pods-testPredictionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPredictionTests.release.xcconfig"; path = "Target Support Files/Pods-testPredictionTests/Pods-testPredictionTests.release.xcconfig"; sourceTree = "<group>"; };
+		37D82B740715CB8038AC9683 /* Pods-testKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testKeyboard.debug.xcconfig"; path = "Target Support Files/Pods-testKeyboard/Pods-testKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		3FC323FDCBA135786DB70CBF /* Pods_testPrediction_testPredictionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPrediction_testPredictionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0361B884C1EAC0BD456561 /* Pods_testPrediction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPrediction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D051D38D246B057A4AC488 /* Pods_testPredictionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPredictionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		714009DDE49FE47BECAD43CC /* Pods-testPrediction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction.release.xcconfig"; path = "Target Support Files/Pods-testPrediction/Pods-testPrediction.release.xcconfig"; sourceTree = "<group>"; };
+		722C8C49A52525BA40EA1289 /* Pods-testPrediction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction.debug.xcconfig"; path = "Target Support Files/Pods-testPrediction/Pods-testPrediction.debug.xcconfig"; sourceTree = "<group>"; };
+		75F1B70658F09AEB928977FA /* Pods_testKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8110A9DEB383641D9E58CE5B /* Pods-testKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testKeyboard.release.xcconfig"; path = "Target Support Files/Pods-testKeyboard/Pods-testKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+		8B8DBEF447F00B037EAEAD70 /* Pods-testPrediction-testPredictionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction-testPredictionUITests.debug.xcconfig"; path = "Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D2D981D2F03DCA400780E0A /* PredictionKeyboard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PredictionKeyboard.xcframework; path = ../PredictionKeyboardClean/PredictionKeyboard.xcframework; sourceTree = "<group>"; };
-		C2695A28D90B93563B268F51 /* Pods-testPrediction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction.release.xcconfig"; path = "Target Support Files/Pods-testPrediction/Pods-testPrediction.release.xcconfig"; sourceTree = "<group>"; };
-		C68DC86FF285167BF462FFE1 /* Pods-testPredictionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPredictionTests.debug.xcconfig"; path = "Target Support Files/Pods-testPredictionTests/Pods-testPredictionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E8FF45B6A2378EEBE57BBA74 /* Pods_testPrediction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPrediction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAEDA6F8AA9C903CCEE55CD2 /* Pods-testPrediction-testPredictionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction-testPredictionUITests.debug.xcconfig"; path = "Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D2D9A1A2F04901100780E0A /* testKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = testKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A423C650471056AD3462D563 /* Pods-testPredictionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPredictionTests.debug.xcconfig"; path = "Target Support Files/Pods-testPredictionTests/Pods-testPredictionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9881ACD7714595E5F751F28 /* Pods-testPrediction-testPredictionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPrediction-testPredictionUITests.release.xcconfig"; path = "Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8D2D9A262F04901100780E0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8D2D9A192F04901100780E0A /* testKeyboard */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8D2D9A1B2F04901100780E0A /* testKeyboard */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8D2D9A262F04901100780E0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = testKeyboard; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0775F68924524E3A00C1A5A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8A1F82CEBB703796F3C21D /* Pods_testPrediction.framework in Frameworks */,
+				B96E52DE7D16AB1AC6D97158 /* Pods_testPrediction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2051D4E21CEDC18E67A157AA /* Pods_testPredictionTests.framework in Frameworks */,
+				9C1D7D5717B348E9DCBB3EEC /* Pods_testPredictionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +142,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E570A84A4BC864C3F72305F9 /* Pods_testPrediction_testPredictionUITests.framework in Frameworks */,
+				AD3A250C9E988DB09B7978BA /* Pods_testPrediction_testPredictionUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D2D9A172F04901100780E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873E6ECF3DCDA13F53ECCDAB /* Pods_testKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +163,7 @@
 				0775F68E24524E3A00C1A5A5 /* testPrediction */,
 				0775F6AA24524E3B00C1A5A5 /* testPredictionTests */,
 				0775F6B524524E3B00C1A5A5 /* testPredictionUITests */,
+				8D2D9A1B2F04901100780E0A /* testKeyboard */,
 				0775F68D24524E3A00C1A5A5 /* Products */,
 				CAD95D666A255731A3E760A8 /* Pods */,
 				A82A61422E29E0FDBCF75BC6 /* Frameworks */,
@@ -129,6 +176,7 @@
 				0775F68C24524E3A00C1A5A5 /* testPrediction.app */,
 				0775F6A724524E3B00C1A5A5 /* testPredictionTests.xctest */,
 				0775F6B224524E3B00C1A5A5 /* testPredictionUITests.xctest */,
+				8D2D9A1A2F04901100780E0A /* testKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,9 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				8D2D981D2F03DCA400780E0A /* PredictionKeyboard.xcframework */,
-				E8FF45B6A2378EEBE57BBA74 /* Pods_testPrediction.framework */,
-				75D3BE248FFFC48A3B0D9E77 /* Pods_testPrediction_testPredictionUITests.framework */,
-				8CD09DB1354F429CDE1ED90B /* Pods_testPredictionTests.framework */,
+				75F1B70658F09AEB928977FA /* Pods_testKeyboard.framework */,
+				4D0361B884C1EAC0BD456561 /* Pods_testPrediction.framework */,
+				3FC323FDCBA135786DB70CBF /* Pods_testPrediction_testPredictionUITests.framework */,
+				53D051D38D246B057A4AC488 /* Pods_testPredictionTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,12 +233,14 @@
 		CAD95D666A255731A3E760A8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				11E840B774E593FD06975AC2 /* Pods-testPrediction.debug.xcconfig */,
-				C2695A28D90B93563B268F51 /* Pods-testPrediction.release.xcconfig */,
-				FAEDA6F8AA9C903CCEE55CD2 /* Pods-testPrediction-testPredictionUITests.debug.xcconfig */,
-				14467A8728869C4F59D5768F /* Pods-testPrediction-testPredictionUITests.release.xcconfig */,
-				C68DC86FF285167BF462FFE1 /* Pods-testPredictionTests.debug.xcconfig */,
-				32D6EFF58FCECBB4ABFBD2BF /* Pods-testPredictionTests.release.xcconfig */,
+				37D82B740715CB8038AC9683 /* Pods-testKeyboard.debug.xcconfig */,
+				8110A9DEB383641D9E58CE5B /* Pods-testKeyboard.release.xcconfig */,
+				722C8C49A52525BA40EA1289 /* Pods-testPrediction.debug.xcconfig */,
+				714009DDE49FE47BECAD43CC /* Pods-testPrediction.release.xcconfig */,
+				8B8DBEF447F00B037EAEAD70 /* Pods-testPrediction-testPredictionUITests.debug.xcconfig */,
+				F9881ACD7714595E5F751F28 /* Pods-testPrediction-testPredictionUITests.release.xcconfig */,
+				A423C650471056AD3462D563 /* Pods-testPredictionTests.debug.xcconfig */,
+				2914DC0E6A71A556B030FB23 /* Pods-testPredictionTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -201,16 +252,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0775F6BB24524E3B00C1A5A5 /* Build configuration list for PBXNativeTarget "testPrediction" */;
 			buildPhases = (
-				B029B8EB58F93454BA661CE5 /* [CP] Check Pods Manifest.lock */,
+				BE600341E8F1D2F3D9658103 /* [CP] Check Pods Manifest.lock */,
 				0775F68824524E3A00C1A5A5 /* Sources */,
 				0775F68924524E3A00C1A5A5 /* Frameworks */,
 				0775F68A24524E3A00C1A5A5 /* Resources */,
 				07C3E7312452E45E00E182BB /* Embed Frameworks */,
-				CCBBE9728442D2BF97DCE3C6 /* [CP] Embed Pods Frameworks */,
+				8D2D9A232F04901100780E0A /* Embed Foundation Extensions */,
+				4F9EB1F331A29F4B8C6A7D4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8D2D9A212F04901100780E0A /* PBXTargetDependency */,
 			);
 			name = testPrediction;
 			productName = testPrediction;
@@ -221,7 +274,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0775F6BE24524E3B00C1A5A5 /* Build configuration list for PBXNativeTarget "testPredictionTests" */;
 			buildPhases = (
-				30615FEBA996A86A998D3E04 /* [CP] Check Pods Manifest.lock */,
+				E22ED752645F565999568B71 /* [CP] Check Pods Manifest.lock */,
 				0775F6A324524E3B00C1A5A5 /* Sources */,
 				0775F6A424524E3B00C1A5A5 /* Frameworks */,
 				0775F6A524524E3B00C1A5A5 /* Resources */,
@@ -240,11 +293,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0775F6C124524E3B00C1A5A5 /* Build configuration list for PBXNativeTarget "testPredictionUITests" */;
 			buildPhases = (
-				595DAF16C2937443FE5B205F /* [CP] Check Pods Manifest.lock */,
+				1E4F36CF197A795B58626848 /* [CP] Check Pods Manifest.lock */,
 				0775F6AE24524E3B00C1A5A5 /* Sources */,
 				0775F6AF24524E3B00C1A5A5 /* Frameworks */,
 				0775F6B024524E3B00C1A5A5 /* Resources */,
-				B7205C4E0D22E887975C682E /* [CP] Embed Pods Frameworks */,
+				75CE9EAD6831E00C3EC0A726 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +308,27 @@
 			productName = testPredictionUITests;
 			productReference = 0775F6B224524E3B00C1A5A5 /* testPredictionUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		8D2D9A192F04901100780E0A /* testKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D2D9A272F04901100780E0A /* Build configuration list for PBXNativeTarget "testKeyboard" */;
+			buildPhases = (
+				CCA9B319C0F215A1C6DA91B3 /* [CP] Check Pods Manifest.lock */,
+				8D2D9A162F04901100780E0A /* Sources */,
+				8D2D9A172F04901100780E0A /* Frameworks */,
+				8D2D9A182F04901100780E0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8D2D9A1B2F04901100780E0A /* testKeyboard */,
+			);
+			name = testKeyboard;
+			productName = testKeyboard;
+			productReference = 8D2D9A1A2F04901100780E0A /* testKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -276,6 +350,9 @@
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = 0775F68B24524E3A00C1A5A5;
 					};
+					8D2D9A192F04901100780E0A = {
+						CreatedOnToolsVersion = 26.2;
+					};
 				};
 			};
 			buildConfigurationList = 0775F68724524E3A00C1A5A5 /* Build configuration list for PBXProject "testPrediction" */;
@@ -294,6 +371,7 @@
 				0775F68B24524E3A00C1A5A5 /* testPrediction */,
 				0775F6A624524E3B00C1A5A5 /* testPredictionTests */,
 				0775F6B124524E3B00C1A5A5 /* testPredictionUITests */,
+				8D2D9A192F04901100780E0A /* testKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -323,32 +401,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		30615FEBA996A86A998D3E04 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
+		8D2D9A182F04901100780E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-testPredictionTests-checkManifestLockResult.txt",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
-		595DAF16C2937443FE5B205F /* [CP] Check Pods Manifest.lock */ = {
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E4F36CF197A795B58626848 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,7 +433,49 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B029B8EB58F93454BA661CE5 /* [CP] Check Pods Manifest.lock */ = {
+		4F9EB1F331A29F4B8C6A7D4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testPrediction/Pods-testPrediction-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testPrediction/Pods-testPrediction-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testPrediction/Pods-testPrediction-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75CE9EAD6831E00C3EC0A726 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE600341E8F1D2F3D9658103 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,38 +497,48 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B7205C4E0D22E887975C682E /* [CP] Embed Pods Frameworks */ = {
+		CCA9B319C0F215A1C6DA91B3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testKeyboard-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testPrediction-testPredictionUITests/Pods-testPrediction-testPredictionUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CCBBE9728442D2BF97DCE3C6 /* [CP] Embed Pods Frameworks */ = {
+		E22ED752645F565999568B71 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testPrediction/Pods-testPrediction-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testPrediction/Pods-testPrediction-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testPredictionTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testPrediction/Pods-testPrediction-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -456,6 +571,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D2D9A162F04901100780E0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -468,6 +590,11 @@
 			isa = PBXTargetDependency;
 			target = 0775F68B24524E3A00C1A5A5 /* testPrediction */;
 			targetProxy = 0775F6B324524E3B00C1A5A5 /* PBXContainerItemProxy */;
+		};
+		8D2D9A212F04901100780E0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D2D9A192F04901100780E0A /* testKeyboard */;
+			targetProxy = 8D2D9A202F04901100780E0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -603,7 +730,7 @@
 		};
 		0775F6BC24524E3B00C1A5A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11E840B774E593FD06975AC2 /* Pods-testPrediction.debug.xcconfig */;
+			baseConfigurationReference = 722C8C49A52525BA40EA1289 /* Pods-testPrediction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = testPrediction/testPrediction.entitlements;
@@ -628,7 +755,7 @@
 		};
 		0775F6BD24524E3B00C1A5A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2695A28D90B93563B268F51 /* Pods-testPrediction.release.xcconfig */;
+			baseConfigurationReference = 714009DDE49FE47BECAD43CC /* Pods-testPrediction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = testPrediction/testPrediction.entitlements;
@@ -652,7 +779,7 @@
 		};
 		0775F6BF24524E3B00C1A5A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C68DC86FF285167BF462FFE1 /* Pods-testPredictionTests.debug.xcconfig */;
+			baseConfigurationReference = A423C650471056AD3462D563 /* Pods-testPredictionTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -673,7 +800,7 @@
 		};
 		0775F6C024524E3B00C1A5A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32D6EFF58FCECBB4ABFBD2BF /* Pods-testPredictionTests.release.xcconfig */;
+			baseConfigurationReference = 2914DC0E6A71A556B030FB23 /* Pods-testPredictionTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -694,7 +821,7 @@
 		};
 		0775F6C224524E3B00C1A5A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAEDA6F8AA9C903CCEE55CD2 /* Pods-testPrediction-testPredictionUITests.debug.xcconfig */;
+			baseConfigurationReference = 8B8DBEF447F00B037EAEAD70 /* Pods-testPrediction-testPredictionUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3UB75P68R;
@@ -713,7 +840,7 @@
 		};
 		0775F6C324524E3B00C1A5A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14467A8728869C4F59D5768F /* Pods-testPrediction-testPredictionUITests.release.xcconfig */;
+			baseConfigurationReference = F9881ACD7714595E5F751F28 /* Pods-testPrediction-testPredictionUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XLF7V8SBM;
@@ -727,6 +854,70 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = testPrediction;
+			};
+			name = Release;
+		};
+		8D2D9A242F04901100780E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37D82B740715CB8038AC9683 /* Pods-testKeyboard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = testKeyboard/testKeyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3839KXFZS2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = testKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.code.c.testPrediction2025.testKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8D2D9A252F04901100780E0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8110A9DEB383641D9E58CE5B /* Pods-testKeyboard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = testKeyboard/testKeyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3839KXFZS2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = testKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.code.c.testPrediction2025.testKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -765,6 +956,15 @@
 			buildConfigurations = (
 				0775F6C224524E3B00C1A5A5 /* Debug */,
 				0775F6C324524E3B00C1A5A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D2D9A272F04901100780E0A /* Build configuration list for PBXNativeTarget "testKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D2D9A242F04901100780E0A /* Debug */,
+				8D2D9A252F04901100780E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

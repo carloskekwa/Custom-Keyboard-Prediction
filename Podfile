@@ -7,7 +7,7 @@ target 'testPrediction' do
   use_frameworks!
 
   # PredictionKeyboard library from CocoaPods
-  pod 'PredictionKeyboard', '1.0.34'
+  pod 'PredictionKeyboard', path: '../PredictionKeyboardClean', inhibit_warnings: true
   target 'testPredictionTests' do
     inherit! :search_paths
     # Pods for testing
@@ -16,6 +16,15 @@ target 'testPrediction' do
   target 'testPredictionUITests' do
     # Pods for testing
   end
+
+end
+
+target 'testKeyboard' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # PredictionKeyboard library from CocoaPods
+  pod 'PredictionKeyboard', path: '../PredictionKeyboardClean', inhibit_warnings: true
 
 end
 
