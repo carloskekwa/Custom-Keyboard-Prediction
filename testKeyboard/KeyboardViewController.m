@@ -71,7 +71,7 @@
     [self.predictionManager getPrediction:@"how are " completion:^(NSArray<NSString *> *suggestions, UIColor *suggestionColor) {
         NSLog(@"suggestions:%@", suggestions);
     }];
-    [self.predictionManager getPrediction:@"helko" completion:^(NSArray<NSString *> *suggestions, UIColor *suggestionColor) {
+    [self.predictionManager getPrediction:@"cool" completion:^(NSArray<NSString *> *suggestions, UIColor *suggestionColor) {
         NSLog(@"suggestions:%@", suggestions);
     }];
 }

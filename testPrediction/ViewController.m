@@ -67,7 +67,7 @@
     }];
     
     // Test word completion
-    [self.predictionManager getPrediction:@"hel" completion:^(NSArray<NSString *> *suggestions, UIColor *textColor) {
+    [self.predictionManager getPrediction:@"cool" completion:^(NSArray<NSString *> *suggestions, UIColor *textColor) {
         NSLog(@"Word completions: %@", suggestions);
         // suggestions = @[@"hello", @"help", @"held"]
     }];

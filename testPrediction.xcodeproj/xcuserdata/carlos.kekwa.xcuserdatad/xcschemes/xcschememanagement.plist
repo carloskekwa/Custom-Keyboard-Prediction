@@ -12,7 +12,20 @@
 		<key>testPrediction.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0775F68B24524E3A00C1A5A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D2D9A192F04901100780E0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
