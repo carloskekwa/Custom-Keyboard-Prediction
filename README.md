@@ -324,6 +324,18 @@ Uses predictions in the keyboard:
 @end
 ```
 
+## Installation Options
+
+### Option 1: Swift Package Manager (Recommended)
+
+1. Open the project in Xcode
+2. Go to **File → Add Package Dependencies...**
+3. Enter: `https://github.com/carloskekwa/PredictionKeyboardClean`
+4. Select version **1.0.37** or "Up to Next Major Version"
+5. Add to both **testPrediction** and **testKeyboard** targets
+
+### Option 2: CocoaPods
+
 ## Podfile Configuration
 
 ```ruby
@@ -332,12 +344,20 @@ platform :ios, '15.0'
 
 target 'testPrediction' do
   use_frameworks!
+<<<<<<< HEAD
   pod 'PredictionKeyboard'
+=======
+  pod 'PredictionKeyboard', '~> 1.0.37'
+>>>>>>> b55d23e (added a Package.swift)
 end
 
 target 'testKeyboard' do
   use_frameworks!
+<<<<<<< HEAD
   pod 'PredictionKeyboard'
+=======
+  pod 'PredictionKeyboard', '~> 1.0.37'
+>>>>>>> b55d23e (added a Package.swift)
 end
 
 post_install do |installer|
