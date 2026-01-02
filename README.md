@@ -332,12 +332,12 @@ platform :ios, '15.0'
 
 target 'testPrediction' do
   use_frameworks!
-  pod 'PredictionKeyboard', '~> 1.0.36'
+  pod 'PredictionKeyboard'
 end
 
 target 'testKeyboard' do
   use_frameworks!
-  pod 'PredictionKeyboard', '~> 1.0.36'
+  pod 'PredictionKeyboard'
 end
 
 post_install do |installer|
