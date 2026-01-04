@@ -854,6 +854,30 @@ When typing words that have associated emojis, the emoji appears in the third su
 
 **Solution:** Add the post_install script from the [CocoaPods section](#cocoapods) to disable code signing and script sandboxing.
 
+#### Sandbox error: "Script phase '[CP] Copy XCFrameworks' blocked by sandboxing" (Xcode 16+)
+
+**Cause:** Xcode 16 enables user script sandboxing by default, which blocks CocoaPods script phases.
+
+**Solution:** Add this to your `Podfile` inside `post_install`:
+
+```ruby
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING'] = 'NO'
+      end
+    end
+  end
+end
+```
+
+Or manually in Xcode:
+1. Select your project
+2. Go to **Build Settings**
+3. Search for "User Script Sandboxing"
+4. Set **ENABLE_USER_SCRIPT_SANDBOXING** to **No** for all targets
+
 ---
 
 ## FAQ
@@ -906,4 +930,3 @@ PredictionKeyboard is available under the MIT license. See the [LICENSE](LICENSE
 - [GitHub Repository](https://github.com/carloskekwa/Custom-Keyboard-Prediction)
 - [CocoaPods Page](https://cocoapods.org/pods/PredictionKeyboard)
 - [Report Issues](https://github.com/carloskekwa/Custom-Keyboard-Prediction/issues)
-
