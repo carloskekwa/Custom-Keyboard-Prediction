@@ -416,6 +416,143 @@ class ViewController: UIViewController {
 }
 ```
 
+### Keyboard Extension - KeyboardViewController.swift
+
+```swift
+import UIKit
+import PredictionKeyboard
+
+class KeyboardViewController: UIInputViewController {
+    
+    // MARK: - Properties
+    var predictionManager: PredictionKeyboardManager!
+    var suggestionBar: UIStackView!
+    var suggestionButtons: [UIButton] = []
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupPredictionManager()
+        setupSuggestionBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Initialize database when keyboard appears
+        predictionManager.initializePredictionDatabase { success, error in
+            if success {
+                print("Keyboard database ready!")
+            } else {
+                print("Failed to initialize: \(error?.localizedDescription ?? "Unknown")")
+            }
+        }
+    }
+    
+    // MARK: - Setup Methods
+    func setupPredictionManager() {
+        // IMPORTANT: Use the SAME app group as your main app
+        predictionManager = PredictionKeyboardManager(appGroup: "group.com.yourcompany.yourapp")
+    }
+    
+    func setupSuggestionBar() {
+        suggestionBar = UIStackView()
+        suggestionBar.axis = .horizontal
+        suggestionBar.distribution = .fillEqually
+        suggestionBar.spacing = 4
+        suggestionBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Create 3 suggestion buttons
+        for i in 0..<3 {
+            let button = UIButton(type: .system)
+            button.setTitle("", for: .normal)
+            button.tag = i
+            button.backgroundColor = .white
+            button.layer.cornerRadius = 5
+            button.addTarget(self, action: #selector(suggestionTapped(_:)), for: .touchUpInside)
+            suggestionButtons.append(button)
+            suggestionBar.addArrangedSubview(button)
+        }
+        
+        view.addSubview(suggestionBar)
+        
+        NSLayoutConstraint.activate([
+            suggestionBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 4),
+            suggestionBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
+            suggestionBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -4),
+            suggestionBar.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    
+    // MARK: - Text Input Tracking
+    override func textDidChange(_ textInput: UITextInput?) {
+        super.textDidChange(textInput)
+        
+        // Get text before cursor
+        guard let proxy = textDocumentProxy as? UITextDocumentProxy,
+              let beforeCursor = proxy.documentContextBeforeInput else {
+            clearSuggestions()
+            return
+        }
+        
+        // Get predictions
+        predictionManager.getPrediction(beforeCursor) { [weak self] suggestions, textColor in
+            DispatchQueue.main.async {
+                self?.updateSuggestions(suggestions ?? [])
+            }
+        }
+    }
+    
+    // MARK: - Suggestion Actions
+    @objc func suggestionTapped(_ sender: UIButton) {
+        guard let suggestion = sender.title(for: .normal),
+              !suggestion.isEmpty else { return }
+        
+        // Delete partial word if completing
+        deletePartialWord()
+        
+        // Insert suggestion with space
+        textDocumentProxy.insertText(suggestion + " ")
+        
+        // Get new predictions
+        textDidChange(nil)
+    }
+    
+    func deletePartialWord() {
+        guard let proxy = textDocumentProxy as? UITextDocumentProxy,
+              let beforeCursor = proxy.documentContextBeforeInput else { return }
+        
+        // Find the partial word to delete
+        var charsToDelete = 0
+        for char in beforeCursor.reversed() {
+            if char == " " { break }
+            charsToDelete += 1
+        }
+        
+        for _ in 0..<charsToDelete {
+            proxy.deleteBackward()
+        }
+    }
+    
+    // MARK: - UI Updates
+    func updateSuggestions(_ suggestions: [String]) {
+        for (index, button) in suggestionButtons.enumerated() {
+            if index < suggestions.count {
+                button.setTitle(suggestions[index], for: .normal)
+            } else {
+                button.setTitle("", for: .normal)
+            }
+        }
+    }
+    
+    func clearSuggestions() {
+        suggestionButtons.forEach { $0.setTitle("", for: .normal) }
+    }
+}
+```
+
+
 ## Installation Options
 
 ### Option 1: Swift Package Manager (Recommended)
@@ -516,11 +653,21 @@ Then clean (**Product → Clean Build Folder**) and rebuild.
 
 ### Keyboard Extension Info.plist
 
-Your keyboard extension's `Info.plist` must have `RequestsOpenAccess` set to `true`:
+Your keyboard extension's `Info.plist` must have `RequestsOpenAccess` set to `true` inside the `NSExtension` dictionary:
 
 ```xml
-<key>RequestsOpenAccess</key>
-<true/>
+<key>NSExtension</key>
+<dict>
+    <key>NSExtensionAttributes</key>
+    <dict>
+        <key>RequestsOpenAccess</key>
+        <true/>
+    </dict>
+    <key>NSExtensionPointIdentifier</key>
+    <string>com.apple.keyboard-service</string>
+    <key>NSExtensionPrincipalClass</key>
+    <string>$(PRODUCT_MODULE_NAME).KeyboardViewController</string>
+</dict>
 ```
 
 ### Allow Full Access
