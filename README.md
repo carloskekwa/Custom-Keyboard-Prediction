@@ -330,8 +330,8 @@ Uses predictions in the keyboard:
 
 1. Open the project in Xcode
 2. Go to **File → Add Package Dependencies...**
-3. Enter: `https://github.com/carloskekwa/PredictionKeyboardClean](https://github.com/carloskekwa/Custom-Keyboard-Prediction`
-4. Select version **1.0.38** or "Up to Next Major Version"
+3. Enter: `https://github.com/carloskekwa/Custom-Keyboard-Prediction`
+4. Select version **1.0.42** or "Up to Next Major Version"
 5. Add to both **testPrediction** and **testKeyboard** targets
 
 ### Option 2: CocoaPods
