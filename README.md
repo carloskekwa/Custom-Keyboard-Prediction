@@ -334,6 +334,13 @@ Uses predictions in the keyboard:
 4. Select version **1.0.42** or "Up to Next Major Version"
 5. Add to both **testPrediction** and **testKeyboard** targets
 
+
+**Import in Objective-C:**
+
+```objc
+@import PredictionKeyboard;
+```
+
 ### Option 2: CocoaPods
 
 ## Podfile Configuration
@@ -380,6 +387,34 @@ post_install do |installer|
   end
 end
 ```
+
+
+## Troubleshooting
+
+### Xcode 16+ Sandbox Error
+
+If you encounter a sandbox error like:
+
+```
+Sandbox: rsync deny(1) file-write-create .../Realm.framework/realm_objc_privacy.bundle
+```
+
+You need to disable **User Script Sandboxing** in your main project:
+
+1. Open your `.xcodeproj` in Xcode
+2. Select your **project** (blue icon) in the navigator
+3. Select your **target**
+4. Go to **Build Settings** → Click **All** (not Basic)
+5. Search for **"script"** or **"sandbox"**
+6. If you see **User Script Sandboxing**, set it to **NO**
+
+Alternatively, add a User-Defined Setting:
+1. In **Build Settings**, click the **+** button
+2. Select **Add User-Defined Setting**
+3. Name: `ENABLE_USER_SCRIPT_SANDBOXING`
+4. Value: `NO`
+
+Then clean (**Product → Clean Build Folder**) and rebuild.
 
 ## Important Notes
 
