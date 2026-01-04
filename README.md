@@ -324,6 +324,98 @@ Uses predictions in the keyboard:
 @end
 ```
 
+
+## Swift Usage
+
+If you prefer Swift, here is the equivalent implementation:
+
+### Main App - ViewController.swift
+
+```swift
+import UIKit
+import PredictionKeyboard
+
+class ViewController: UIViewController {
+    
+    // MARK: - Properties
+    var predictionManager: PredictionKeyboardManager!
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Initialize with app group (for keyboard extension)
+        // IMPORTANT: Replace with YOUR unique app group identifier
+        predictionManager = PredictionKeyboardManager(appGroup: "group.com.yourcompany.yourapp")
+        
+        // Check if database is already downloaded
+        if predictionManager.isDatabaseDownloaded() {
+            print("Database already exists, initializing...")
+            initializeDatabase()
+        } else {
+            print("Database not found, starting download...")
+            downloadDatabase()
+        }
+    }
+    
+    // MARK: - Database Methods
+    func downloadDatabase() {
+        // Show download UI with progress bar
+        predictionManager.downloadDatabase(withUI: self) { [weak self] success, error in
+            if success {
+                print("Download completed successfully!")
+                self?.initializeDatabase()
+            } else {
+                print("Download failed: \(error?.localizedDescription ?? "Unknown error")")
+                self?.showErrorAlert(error: error)
+            }
+        }
+    }
+    
+    func initializeDatabase() {
+        predictionManager.initializePredictionDatabase { [weak self] success, error in
+            if success {
+                print("Database ready to use!")
+                self?.testPredictions()
+            } else {
+                print("Database initialization failed: \(error?.localizedDescription ?? "Unknown error")")
+            }
+        }
+    }
+    
+    func testPredictions() {
+        // Test next-word prediction (note the trailing space)
+        predictionManager.getPrediction("how are ") { suggestions, textColor in
+            print("Next-word predictions: \(suggestions ?? [])")
+            // suggestions = ["you", "they", "we"]
+        }
+        
+        // Test word completion (no trailing space)
+        predictionManager.getPrediction("hel") { suggestions, textColor in
+            print("Word completions: \(suggestions ?? [])")
+            // suggestions = ["hello", "help", "held"]
+        }
+    }
+    
+    // MARK: - Helpers
+    func showErrorAlert(error: Error?) {
+        let alert = UIAlertController(
+            title: "Download Failed",
+            message: error?.localizedDescription ?? "Unknown error occurred",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
+            self?.downloadDatabase()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+}
+```
+
 ## Installation Options
 
 ### Option 1: Swift Package Manager (Recommended)
