@@ -15,8 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "PredictionKeyboard",
-            url: "https://youtakeadvantage.s3.eu-central-1.amazonaws.com/PredictionKeyboard.zip",
-            checksum: "dda327f08c4b67628ff0235aa40faa7b905e5b8702bc4d3aba4dfd9ab8c9c70a"
+            url: "https://youtakeadvantage.s3.eu-central-1.amazonaws.com/PredictionKeyboard_spm.zip",
+            checksum: "d15f1d4f6d1258e41fdf39df5e732ceb864a8e6915ae626f379ad1a5f399490a"
         ),
     ]
 )
