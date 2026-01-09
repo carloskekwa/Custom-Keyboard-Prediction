@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PredictionKeyboard'
-  s.version          = '1.0.32'
+  s.version          = '1.0.45'
   s.summary          = 'Intelligent next-word prediction for iOS keyboards'
   
   s.description      = <<-DESC
