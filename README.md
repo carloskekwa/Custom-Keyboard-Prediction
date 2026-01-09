@@ -73,7 +73,7 @@ SPM is the recommended way to integrate PredictionKeyboard. Realm is bundled ins
    ```
    https://github.com/carloskekwa/Custom-Keyboard-Prediction
    ```
-4. Select version **1.0.37** or choose "Up to Next Major Version"
+4. Select version **1.0.45** or choose "Up to Next Major Version"
 5. Click **Add Package**
 6. Select both your **main app target** AND your **keyboard extension target**
 7. Click **Add Package**
